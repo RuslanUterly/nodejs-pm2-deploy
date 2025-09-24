@@ -11,7 +11,7 @@ module.exports = {
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
       key: "~/.ssh/vm_access/ssh-key-1758536918231",
-      "post-deploy": 'cd frontend && pwd && export NODE_OPTIONS=--openssl-legacy-provider && npm i && npm run build'
+      "post-deploy": 'source $HOME/.nvm/nvm.sh && cd frontend && pwd && export NODE_OPTIONS=--openssl-legacy-provider && npm i && npm run build'
     },
   },
 }; 
