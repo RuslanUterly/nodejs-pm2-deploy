@@ -1,6 +1,4 @@
-const dotenv = require("dotenv");
-const path = require("path");
-dotenv.config({ path: path.resolve(__dirname, ".env.deploy") });
+require('dotenv').config({ path: __dirname + '/.env.deploy' });
 
 const { DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF, DEPLOY_REPO } = process.env;
 
@@ -18,10 +16,10 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
-      key: "~/.ssh/vm_access/private",
-      "pre-deploy-local": `bash scripts/deployEnv.sh ${DEPLOY_USER}@${DEPLOY_HOST} ${DEPLOY_PATH}`,
+      key: "~/.ssh/vm_access/ssh-key-1758536918231",
+      "pre-deploy-local": `scp -i ~/.ssh/id_ed25519 .env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/backend`,
       "post-deploy":
-        "cd backend && pwd && npm ci && npm i && npm run build && pm2 startOrRestart ecosystem.config.js --env production",
+        "source $HOME/.nvm/nvm.sh && cd backend && npm i && npm run build && pm2 startOrRestart ecosystem.config.js --env production",
     },
   },
 }; 
