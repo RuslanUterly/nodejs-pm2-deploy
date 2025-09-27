@@ -4,10 +4,10 @@
 
 IP: 158.160.198.112
 
-Frontend:
+<div>Frontend:</div>
 <div>https://kholikov.students.nomorepartiessbs.ru/</div>
 <div>http://kholikov.students.nomorepartiessbs.ru/</div>
 
-Backend:
+<div>Backend:</div>
 <div>https://api.kholikov.students.nomorepartiessbs.ru/</div>
 <div>http://api.kholikov.students.nomorepartiessbs.ru/</div>
