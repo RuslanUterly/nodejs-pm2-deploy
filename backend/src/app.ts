@@ -17,6 +17,8 @@ mongoose.connect(DB_ADDRESS);
 app.use(cors({
   origin: ['https://kholikov.students.nomorepartiessbs.ru', 'http://localhost:3000'],
   credentials: true,
+  methods: ['GET','HEAD','PUT','PATCH','POST','DELETE'],
+  allowedHeaders: ['Content-Type','Authorization']
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
