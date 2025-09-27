@@ -15,7 +15,7 @@ mongoose.connect(DB_ADDRESS);
 
 // Только для локальных тестов. Не используйте это в продакшене
 app.use(cors({
-  origin: ['https://kholikov.students.nomorepartiessbs.ru', 'http://localhost:3000'],
+  origin: ['https://kholikov.students.nomorepartiessbs.ru', 'http://kholikov.students.nomorepartiessbs.ru'],
   credentials: true,
   methods: ['GET','HEAD','PUT','PATCH','POST','DELETE'],
   allowedHeaders: ['Content-Type','Authorization']
